@@ -13,9 +13,9 @@ addToListButton.addEventListener("click", async () => {
   });
 });
 
-const addToList = () => {
+function addToList() {
   const input = document.getElementById('usernameInput');
-  console.log(addToListButton)
+  console.log(document.body)
   if (input.value === '') return;
   chrome.storage.sync.get("list", ({ list }) => {
     if (!list) list = [];
@@ -27,7 +27,7 @@ const addToList = () => {
   });
 }
 
-const removeUsersFromChat = () => {
+function removeUsersFromChat() {
   const chatWindow = document.body.querySelector("[data-test-selector='chat-scrollable-area__message-container']");
   const chatMessages = chatWindow.querySelectorAll('.chat-line__message');
   chatMessages.forEach((msg) => {
