@@ -15,10 +15,13 @@ changeColor.addEventListener("click", async () => {
 });
 
 saveName.addEventListener('click', () => {
-  const test = document.getElementById('display');
+  const display = document.getElementById('display');
   chrome.storage.sync.get("list", ({ list }) => {
     const newName = document.getElementById('inputEle')
     chrome.storage.sync.set({ list: [...list, newName.value] });
+    const listItem = document.createElement('li');
+    listItem.innerText = newName.value;
+    display.appendChild(listItem);
   });
 })
 
