@@ -1,5 +1,5 @@
 let saveName = document.getElementById("saveName");
-
+const display = document.getElementById('display');
 // chrome.storage.sync.get("color", ({ color }) => {
 //   changeColor.style.backgroundColor = color;
 // });
@@ -13,8 +13,16 @@ let saveName = document.getElementById("saveName");
 //   });
 // });
 
+chrome.storage.sync.get("list", ({ list }) => {
+  list.forEach(item => {
+    const listItem = document.createElement('li');
+    listItem.innerText = item;
+    display.appendChild(listItem);
+  })
+});
+
 saveName.addEventListener('click', () => {
-  const display = document.getElementById('display');
+  
   chrome.storage.sync.get("list", ({ list }) => {
     const newName = document.getElementById('inputEle')
     chrome.storage.sync.set({ list: [...list, newName.value] });
