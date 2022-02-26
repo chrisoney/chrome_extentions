@@ -15,8 +15,7 @@ const display = document.getElementById('display');
 
 chrome.storage.sync.get("list", ({ list }) => {
   list.forEach(item => {
-    const listItem = document.createElement('li');
-    listItem.innerText = item;
+    const listItem = buildListItem(item)
     display.appendChild(listItem);
   })
 });
@@ -26,8 +25,7 @@ saveName.addEventListener('click', () => {
   chrome.storage.sync.get("list", ({ list }) => {
     const newName = document.getElementById('inputEle')
     chrome.storage.sync.set({ list: [...list, newName.value] });
-    const listItem = document.createElement('li');
-    listItem.innerText = newName.value;
+    const listItem = buildListItem(newName.value)
     display.appendChild(listItem);
   });
 })
@@ -37,3 +35,9 @@ saveName.addEventListener('click', () => {
 //     document.body.style.backgroundColor = color;
 //   });
 // }
+
+const buildListItem = (val) => {
+  const listItem = document.createElement('li');
+  listItem.innerText = val;
+  return listItem;
+}
