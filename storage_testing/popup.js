@@ -1,5 +1,12 @@
-let saveName = document.getElementById("saveName");
+const saveName = document.getElementById("saveName");
 const display = document.getElementById('display');
+const switchElement = document.querySelector('.switch');
+
+if (switchElement) {
+  switchElement.addEventListener('click', () => {
+    console.log('we hit here');
+  })
+}  
 // chrome.storage.sync.get("color", ({ color }) => {
 //   changeColor.style.backgroundColor = color;
 // });
