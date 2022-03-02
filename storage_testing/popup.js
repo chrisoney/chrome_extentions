@@ -1,22 +1,10 @@
 const saveName = document.getElementById("saveName");
 const display = document.getElementById('display');
-const switchElement = document.querySelector('.switch');
 const inputElement = switchElement.querySelector('.checkbox');
-const sliderElement = switchElement.querySelector('.slider');
 
-if (switchElement) {
-  switchElement.addEventListener('click', () => {
-    console.log('we hit switchElement');
-  })
-}  
 if (inputElement) {
   inputElement.addEventListener('click', () => {
     console.log('we hit inputElement');
-  })
-}  
-if (sliderElement) {
-  sliderElement.addEventListener('click', () => {
-    console.log('we hit sliderElement');
   })
 }  
 // chrome.storage.sync.get("color", ({ color }) => {
