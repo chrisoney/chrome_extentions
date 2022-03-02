@@ -3,8 +3,8 @@ const display = document.getElementById('display');
 const inputElement = switchElement.querySelector('.checkbox');
 
 if (inputElement) {
-  inputElement.addEventListener('click', () => {
-    console.log('we hit inputElement');
+  inputElement.addEventListener('click', (e) => {
+    console.log(e.target);
   })
 }  
 // chrome.storage.sync.get("color", ({ color }) => {
