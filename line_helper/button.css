@@ -1,0 +1,35 @@
+body {
+  position: relative;
+}
+
+button {
+  height: 30px;
+  width: 30px;
+  outline: none;
+  margin: 10px;
+  border: none;
+  border-radius: 2px;
+  background-color: black;
+  color: white
+}
+
+/* button.current {
+  box-shadow: 0 0 0 2px white,
+              0 0 0 4px black;
+} */
+
+#leftLine, #rightLine {
+  position: absolute;
+  min-width: 3px;
+  height: 100%;
+  background-color: white;
+  z-index: 15;
+}
+
+#leftLine {
+  left: 10%;
+}
+
+#rightLine {
+  right: 10%;
+}
